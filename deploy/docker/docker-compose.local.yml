@@ -1,0 +1,8 @@
+# Local port remapping to avoid conflicts with the running celeborn cluster
+# (celeborn-spark-master occupies host ports 4040/7077/8080).
+services:
+  spark-master:
+    ports: !override
+      - "14040:4040"
+      - "17077:7077"
+      - "18080:8080"
